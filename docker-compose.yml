@@ -21,7 +21,7 @@ services:
     image: kawin2526/card_backend:0.2
     container_name: card_todo_backend
     ports:
-      - "${BACKEND_PORT}:2222"
+      - "${BACKEND_PORT}:${BACKEND_PORT}"
     environment:
       - DB_NAME=${DB_NAME}
       - DB_HOST=${DB_HOST}
@@ -38,7 +38,7 @@ services:
     image: kawin2526/card_frontend:0.2
     container_name: card_todo_frontend
     ports:
-      - "${FRONTEND_PORT}:3333"
+      - "${FRONTEND_PORT}:${FRONTEND_PORT}"
     networks:
       - g11_card_todo_net
     environment:
