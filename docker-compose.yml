@@ -12,7 +12,7 @@ services:
     ports:
       - "${DB_PORT}:3306"
     volumes:
-      - db_data:/var/lib/mysql
+      - g11_db_data:/var/lib/mysql
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
     networks:
       - g11_card_todo_net
@@ -46,7 +46,7 @@ services:
       - NGINX_PORT=${FRONTEND_PORT}
 
 volumes:
-  db_data:
+  g11_db_data:
 
 networks:
   g11_card_todo_net:
